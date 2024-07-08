@@ -1,23 +1,19 @@
 
-const removeDuplicates = (arr) => {
-    let uniqueArray = []
-
-    for (let i = 0; i < arr.length; i++) {
-        let isDuplicate = false
-        for (let j = 0; j < uniqueArray.length; j++) {
-            if (arr[i] === uniqueArray[j]) {
-                isDuplicate = true
-                break
-            }
-        }
-        if (!isDuplicate) {
-            uniqueArray.push(arr[i])
-        }
+const findSecondLargestNum = (arr) => {
+    if (arr.length < 2) {
+        return null
     }
 
-    return uniqueArray
+    let sortedArr = arr.sort((a, b) => b - a)
+    console.log("sortedArr", sortedArr)
+
+    let largest = sortedArr[0]
+
+    let secondLargest = sortedArr.find((val) => val < largest)
+    console.log("secondLargest,", secondLargest)
+    return secondLargest
 }
 
-let num = [10, 20, 10, 5, 5, 6, 10]
 
-console.log(removeDuplicates(num))
+const num = [1, 2, 3, 1, 4, 5, 6, 8]
+console.log(findSecondLargestNum(num))
