@@ -26,6 +26,27 @@ async function getWeatherData() {
     await api()
 }
 
-let apiRes =  getWeatherData()
+let apiRes = getWeatherData()
 console.log("apiRes", apiRes)
+
+// Note - Hum await ko directly use ni kr skte , 
+// HUm function m hi await ko use kr skte h
+// or yh function m async keyword lga hona chaiye
+
+
+// to Resolve this point like use await without function we use IIFE (Immediately invoked function expression)
+// Syntax -1
+// (function() {
+
+// })()
+
+// Syntax -2
+// (() => {
+
+// })()
+
+// (async () => {
+
+// })()
+
 
